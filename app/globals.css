@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-win95-bg: #C0C0C0;
+  --color-win95-text: #000000;
+  --color-win95-white: #FFFFFF;
+  --color-win95-black: #000000;
+  --color-win95-gray: #808080;
+  --color-win95-lightgray: #DFDFDF;
+  --color-win95-darkgray: #404040;
+  --color-win95-blue: #0000FF;
+  --color-win95-red: #FF0000;
+  --color-win95-yellow: #FFFF00;
+  --color-win95-green: #00FF00;
+  --color-win95-darkgreen: #00AA00;
+  --color-win95-title: #000080;
+  --color-win95-title-end: #1084D0;
+  --color-win95-panel: #FFFFCC;
+  --color-win95-visited: #800080;
+  --color-win95-teal: #008080;
+
+  --font-sans: "MS Sans Serif", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-display: "Arial Black", Impact, Haettenschweiler, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+
+  --animate-rainbow: rainbow 4s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
+  --animate-pulse-glow: pulse-glow 1.5s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  17% { color: #ff8000; }
+  33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  67% { color: #0080ff; }
+  83% { color: #8000ff; }
+  100% { color: #ff0000; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.5);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-win95-teal);
+  background-image:
+    linear-gradient(45deg, #007878 25%, transparent 25%),
+    linear-gradient(-45deg, #007878 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #007878 75%),
+    linear-gradient(-45deg, transparent 75%, #007878 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+  color: var(--color-win95-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Links - classic 90s style */
+a {
+  color: var(--color-win95-blue);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-win95-red);
+}
+
+a:visited {
+  color: var(--color-win95-visited);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+/* Win95 Scrollbar */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-win95-lightgray);
+  box-shadow: inset 1px 1px 0px var(--color-win95-gray), inset -1px -1px 0px var(--color-win95-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-win95-bg);
+  border: 2px solid;
+  border-color: var(--color-win95-white) var(--color-win95-gray) var(--color-win95-gray) var(--color-win95-white);
+  box-shadow: inset -1px -1px 0px var(--color-win95-darkgray), inset 1px 1px 0px var(--color-win95-lightgray);
+}
+
+::-webkit-scrollbar-button {
+  background: var(--color-win95-bg);
+  border: 2px solid;
+  border-color: var(--color-win95-white) var(--color-win95-gray) var(--color-win95-gray) var(--color-win95-white);
+  box-shadow: inset -1px -1px 0px var(--color-win95-darkgray), inset 1px 1px 0px var(--color-win95-lightgray);
+  height: 16px;
+  width: 16px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-win95-title);
+  color: var(--color-win95-white);
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px dotted var(--color-win95-black);
+  outline-offset: 2px;
+}
+
+/* Utility classes for Win95 effects */
+.win95-outset {
+  border: 2px solid;
+  border-color: var(--color-win95-white) var(--color-win95-gray) var(--color-win95-gray) var(--color-win95-white);
+  box-shadow: inset -1px -1px 0px var(--color-win95-darkgray), inset 1px 1px 0px var(--color-win95-lightgray);
+}
+
+.win95-inset {
+  border: 2px solid;
+  border-color: var(--color-win95-gray) var(--color-win95-white) var(--color-win95-white) var(--color-win95-gray);
+  box-shadow: inset 1px 1px 0px var(--color-win95-darkgray), inset -1px -1px 0px var(--color-win95-lightgray);
+}
+
+.win95-btn {
+  border: 2px solid;
+  border-color: var(--color-win95-white) var(--color-win95-gray) var(--color-win95-gray) var(--color-win95-white);
+  box-shadow: inset -1px -1px 0px var(--color-win95-darkgray), inset 1px 1px 0px var(--color-win95-lightgray);
+  background-color: var(--color-win95-bg);
+  color: var(--color-win95-text);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: none;
+}
+
+.win95-btn:hover {
+  background-color: #D0D0D0;
+}
+
+.win95-btn:active {
+  border-color: var(--color-win95-gray) var(--color-win95-white) var(--color-win95-white) var(--color-win95-gray);
+  box-shadow: inset 1px 1px 0px var(--color-win95-darkgray), inset -1px -1px 0px var(--color-win95-lightgray);
+  transform: translate(1px, 1px);
+}
+
+.win95-title-bar {
+  background: linear-gradient(90deg, var(--color-win95-title) 0%, var(--color-win95-title-end) 100%);
+  color: var(--color-win95-white);
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.win95-title-bar-inactive {
+  background: linear-gradient(90deg, var(--color-win95-gray) 0%, #B5B5B5 100%);
+  color: var(--color-win95-lightgray);
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+/* Construction stripes */
+.construction-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-win95-yellow),
+    var(--color-win95-yellow) 10px,
+    var(--color-win95-black) 10px,
+    var(--color-win95-black) 20px
+  );
+}
+
+/* Tiled background for panels */
+.bg-win95-tile {
+  background-color: var(--color-win95-bg);
+  background-image:
+    linear-gradient(45deg, #B8B8B8 25%, transparent 25%),
+    linear-gradient(-45deg, #B8B8B8 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #B8B8B8 75%),
+    linear-gradient(-45deg, transparent 75%, #B8B8B8 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* HR groove effect */
+.hr-groove {
+  border: none;
+  height: 4px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-win95-gray) 0%, var(--color-win95-gray) 50%,
+    var(--color-win95-white) 50%, var(--color-win95-white) 100%
+  );
+}
+
+/* Animation utilities */
+.text-rainbow {
+  animation: rainbow 4s linear infinite;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .text-rainbow { animation: none; color: var(--color-win95-red); }
+  .animate-marquee { animation: none; }
+  .animate-pulse-glow { animation: none; }
+  .animate-blink { animation: none; }
+}
