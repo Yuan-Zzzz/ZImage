@@ -27,8 +27,6 @@ http://your-host:2222/i/<sha256-hex>.<ext>
 http://your-host:2222/i/<sha256-hex>_thumb.webp     # 400px 缩略图
 ```
 
-URL 中包含内容哈希,响应头自带 `Cache-Control: public, max-age=31536000, immutable` 与 `ETag`,可被 CDN / 反向代理友好缓存。
-
 ## 生产部署
 
 ```bash
@@ -36,4 +34,3 @@ npm run build
 npm start    # listens on :2222
 ```
 
-`./data/` 目录是运行期产物(已 gitignore),备份/迁移时把它和 MongoDB 数据库一起带走即可。
