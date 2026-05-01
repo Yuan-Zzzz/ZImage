@@ -1,7 +1,5 @@
 # ZImages
 
-个人博客图床。前端与方案对齐 [Yuan-Zzzz.com](../Yuan-Zzzz.com)(Next.js 16 + Tailwind v4 + Win95 设计 + MongoDB + JWT)。
-
 - 直链 `/i/<hash>.<ext>` 公开,可在博客文章中嵌入
 - Gallery / 上传 / 删除需要登录(单管理员)
 - 默认端口 `2222`,数据库 `mongodb://localhost:27018/zimages`,文件落盘 `./data/uploads/<YYYY>/<MM>/`
@@ -39,7 +37,3 @@ npm start    # listens on :2222
 ```
 
 `./data/` 目录是运行期产物(已 gitignore),备份/迁移时把它和 MongoDB 数据库一起带走即可。
-
-## 详细 Agent 规则
-
-见 [`AGENTS.md`](./AGENTS.md)。
