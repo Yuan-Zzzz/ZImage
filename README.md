@@ -1,5 +1,7 @@
 # ZImages
 
+个人使用的图床服务，WIN95前端风格，可部署到个人服务器中
+
 - 直链 `/i/<hash>.<ext>` 公开,可在博客文章中嵌入
 - Gallery / 上传 / 删除需要登录(单管理员)
 - 默认端口 `2222`,数据库 `mongodb://localhost:27018/zimages`,文件落盘 `./data/uploads/<YYYY>/<MM>/`
