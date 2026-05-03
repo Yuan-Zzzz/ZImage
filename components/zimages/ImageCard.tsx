@@ -28,6 +28,8 @@ export default function ImageCard({ item, onDeleted }: Props) {
       ? `${window.location.origin}/i/${item.hash}.${item.ext}`
       : `/i/${item.hash}.${item.ext}`;
   const thumbUrl = `/i/${item.hash}_thumb.webp`;
+  const previewUrl =
+    item.mime === "image/gif" ? url : thumbUrl;
 
   async function handleDelete() {
     if (!confirm(`Delete ${item.originalName || item.hash}?`)) return;
@@ -45,7 +47,7 @@ export default function ImageCard({ item, onDeleted }: Props) {
       <div className="win95-inset bg-win95-white aspect-square overflow-hidden flex items-center justify-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={thumbUrl}
+          src={previewUrl}
           alt={item.originalName || item.hash}
           className="max-h-full max-w-full"
         />
